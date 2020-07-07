@@ -1,0 +1,25 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: 模块",
+            "type": "python",
+            "request": "launch",
+            "module": "scrapy"
+        },
+        {
+            "name": "MaoyanScrapy",
+            "type": "python",
+            "request": "launch",
+            "module": "scrapy",
+            "args": [
+                "crawl",
+                "movie"
+            ],
+            "cwd": "H:\\GeekBang\\PythonTrainingCamp\\Python001-class01\\week02\\maoyanmovie"
+        }
+    ]
+}
