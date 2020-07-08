@@ -8,6 +8,11 @@ class MovieSpider(scrapy.Spider):
     name = 'movie'
     allowed_domains = ['maoyan.com']
     start_urls = ['https://maoyan.com/films?showType=3']
+    custom_settings = {
+    	'ITEM_PIPELINES': {
+   	    'maoyanmovie.pipelines.MaoyanmoviePipeline': 300,
+    	}
+    }
 
     def parse(self, response):
         movies = Selector(response=response).xpath(

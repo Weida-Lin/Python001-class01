@@ -15,7 +15,7 @@ class MaoyanmoviePipeline:
         genre = ' '.join(item['genre'])
         date = item['date']
 
-        sql = "insert into maoyanmovie values (%s,%s,%s)"
+        sql = "insert into maoyanmovie values (%s,%s,%s);"
 
         conn = pymysql.connect(
             host = 'localhost',
@@ -28,13 +28,9 @@ class MaoyanmoviePipeline:
         
          # 获得cursor游标对象
         cur = conn.cursor()
-        try:
-            print(cur.excute(sql, [title, genre, date]))
-            # 关闭游标
-            cur.close()
-            conn.commit()
-        except:
-            conn.rollback()
+        count = cur.execute(sql,(title,genre,date))
+        cur.close()
+        conn.commit()
         # 关闭数据库连接
         conn.close()
         
